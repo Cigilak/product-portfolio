@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Product Leadership Portfolio | Fin-Tech & SaaS</title>
+
+  <style>
+    :root {
+      --mint: #e9edc9;
+      --cream: #fefae0;
+      --blue: #ccd5ae;
+      --yellow: #FEFAE0;
+      --peach: #a5a58d;
+      --green: #E9EDC9;
+
+      --dark: #263238;
+      --muted: #607D8B;
+      --accent: #486581;
+      --white: #ffffff;
+      --border: #d8ded6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--mint);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 600px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      padding: 80px 7%;
+      background: var(--mint);
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 13px 22px;
+      border-radius: 10px;
+      background: var(--dark);
+      color: white;
+      display: inline-block;
+    }
+
+    .button.secondary {
+      background: var(--green);
+      color: var(--dark);
+    }
+
+    /* AI WORKFLOW */
+
+    .workflow {
+      background: var(--white);
+      border: 2px dashed #aeb8ae;
+      border-radius: 25px;
+      padding: 30px;
+      min-height: 400px;
+      box-shadow: 0 15px 40px rgba(38, 50, 56, 0.08);
+    }
+
+    .workflow h2 {
+      margin-bottom: 10px;
+    }
+
+    .workflow-subtitle {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .workflow-diagram {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .workflow-node {
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: 800;
+      border: 1px solid var(--border);
+    }
+
+    .node-user {
+      background: var(--cream);
+    }
+
+    .node-data {
+      background: var(--blue);
+    }
+
+    .node-ai {
+      background: var(--green);
+    }
+
+    .node-output {
+      background: var(--yellow);
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .diagram-note {
+      margin-top: 25px;
+      padding: 15px;
+      background: var(--peach);
+      border-radius: 12px;
+      font-size: 0.9rem;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      max-width: 750px;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    /* USE CASES */
+
+    .use-cases {
+      background: var(--cream);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: white;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card.ai {
+      background: var(--green);
+    }
+
+    .card.analytics {
+      background: var(--blue);
+    }
+
+    .card.roadmap {
+      background: var(--yellow);
+    }
+
+    .card-number {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      background: var(--blue);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .experience-box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .experience-box h3 {
+      margin-bottom: 15px;
+    }
+
+    .experience-box ul {
+      padding-left: 20px;
+    }
+
+    /* PRODUCT OPERATING MODEL */
+
+    .operating-model {
+      background: var(--yellow);
+    }
+
+    .model {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .model-step {
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .model-step strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--peach);
+      text-align: center;
+    }
+
+    .contact p {
+      max-width: 650px;
+      margin: 15px auto 25px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 7%;
+      text-align: center;
+      background: var(--dark);
+      color: white;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+      }
+
+      .cards,
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .model {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .model {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">Cigil Achenkunju</div>
+
+    <ul>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#analytics">AI & Analytics</a></li>
+      <li><a href="#roadmap">Product Roadmap</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-text">
+
+      <div class="eyebrow">
+        Product Management • AI • SaaS • Fin-Tech
+      </div>
+
+      <h1>
+        Product leader turning
+        <span style="color:#486581;">ambigous problems</span>
+        into revenue.
+      </h1>
+
+      <p>
+        Product and Tech Leader focused on AI-enabled products, product analytics,
+        customer discovery, experimentation, and roadmap strategy across
+        SaaS and Regulated industry.
+      </p>
+
+      <div class="buttons">
+        <a class="button" href="#work">
+          Explore My Work
+        </a>
+
+        <a class="button" href="#contact">
+          Contact Me
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- AI WORKFLOW PLACEHOLDER -->
+
+    <div class="workflow">
+
+      <h2>AI Product Workflow</h2>
+
+      <p class="workflow-subtitle">
+        Replace this placeholder with your actual AI workflow diagram.
+      </p>
+
+      <div class="workflow-diagram">
+
+        <div class="workflow-node node-user">
+          Product Requriement
+        </div>
+
+        <div class="workflow-node node-data">
+          Product Data / Experimentation
+        </div>
+
+        <div class="arrow">
+          ↓
+        </div>
+
+        <div class="arrow">
+          ↓
+        </div>
+
+        <div class="workflow-node node-ai">
+          AI Strategy
+        </div>
+
+        <div class="workflow-node node-output">
+          Product Outcome
+        </div>
+
+      </div>
+
+      <div class="diagram-note">
+        <strong>Scope:</strong>
+        Discover → Experiment → data layer →
+        AI model → product decision → feedback loop
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- THREE PRIMARY CASE STUDIES -->
+
+  <section id="work" class="use-cases">
+
+    <div class="section-title">
+
+      <div class="eyebrow">
+        Selected Product Work
+      </div>
+
+      <h2>
+        How I approach product problems
+      </h2>
+
+      <p>
+        Three areas demonstrate how I connect customer needs,
+        product strategy, data, and execution.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <!-- CARD 1 -->
+
+      <article class="card ai">
+
+        <div class="card-number">
+          01 / AI PRODUCT MANAGEMENT
+        </div>
+
+        <h3>
+          Voice & AI/ML Product
+        </h3>
+
+        <p>
+          Defined AI-assisted CX workflows by connecting enterprise problems,
+          product design, system architecture, model capabilities,
+          and measurable outcomes. The product delivery is in the regulated space.
+          Contains data security, risk mitigation, authentication, and PII data masking.
+        </p>
+
+        <a href="https://github.com/Cigilak/voice-ai/tree/main">
+          View AI User Stories →
+        </a>
+
+      </article>
+
+
+      <!-- CARD 2 -->
+
+      <article class="card roadmap">
+
+        <div class="card-number">
+          02 / HEALTH-TECH & FIN-TECH PRODUCT
+        </div>
+
+        <h3>
+          SaaS Product Roadmap
+        </h3>
+
+        <p>
+          Built outcome-oriented roadmaps using customer feedback,
+          business priorities, market research, product analytics, dependencies,
+          experimentation, and engineering capacity. A Go-to-market strategy is incoporated in the plan.
+        </p>
+
+        <a href="https://cigilak.github.io/gtm-healthadmin/">
+          View Roadmap Use Cases →
+        </a>
+
+      </article>
+
+
+      <!-- CARD 3 -->
+
+      <article class="card analytics">
+
+        <div class="card-number">
+          03 / SAAS PRODUCT ANALYTICS & ROADMAP
+        </div>
+
+        <h3>
+          Product Analytics
+        </h3>
+
+        <p>
+          Used product metrics to understand activation, adoption,
+          engagement, retention, funnel performance, and opportunities
+          for product improvement.
+        </p>
+
+        <a href="https://cigilak.github.io/product-analytics-saas/">
+          View Analytics Case Study →
+        </a>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section id="analytics" class="experience">
+
+    <div class="section-title">
+
+      <div class="eyebrow">
+        Product Experience
+      </div>
+
+      <h2>
+        SaaS + Fin-Tech + AI
+      </h2>
+
+      <p>
+        A product management approach grounded in customer discovery,
+        analytics, experimentation, and cross-functional execution.
+      </p>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+      <div class="experience-box">
+
+        <h3>
+          SaaS Platform
+        </h3>
+
+        <ul>
+          <li>Product strategy and roadmap development</li>
+          <li>Customer discovery and user stories</li>
+          <li>Product analytics and KPI definition</li>
+          <li>Prioritization and backlog management</li>
+          <li>Cross-functional collaboration</li>
+        </ul>
+
+      </div>
+
+
+      <div class="experience-box">
+
+        <h3>
+          Fin-Tech Platform
+        </h3>
+
+        <ul>
+          <li>Workflow optimization</li>
+          <li>Data-driven product decisions</li>
+          <li>AI-enabled product opportunities</li>
+          <li>Risk Mitigation</li>
+          <li>Regulatory Compliance</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCT OPERATING MODEL -->
+
+  <section id="roadmap" class="operating-model">
+
+    <div class="section-title">
+
+      <div class="eyebrow">
+        Product Operating Model
+      </div>
+
+      <h3>
+        Scope → Experiment → Discover → Decide → Deliver → Measure
+      </h3>
+
+      <p>
+        My product process connects strategy to measurable customer
+        and business outcomes.
+      </p>
+
+    </div>
+
+
+    <div class="model">
+
+      <div class="model-step">
+        <strong>Scope</strong>
+        Customer interviews,
+        market research,
+        user problems.
+      </div>
+
+      <div class="model-step">
+        <strong>Experiment/Discover/Decide</strong>
+	A/B Testing
+        Prioritization,
+        business value,
+        product strategy.
+      </div>
+
+      <div class="model-step">
+        <strong>Deliver</strong>
+        Products,
+        Platform,
+	Eng. Estimation
+        Roadmap execution.
+      </div>
+
+      <div class="model-step">
+        <strong>Measure</strong>
+        KPIs,
+        analytics,
+        learning.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HR / RECRUITER SECTION -->
+
+  <section class="contact" id="contact">
+
+    <div class="eyebrow">
+      For Hiring Managers & Recruiters
+    </div>
+
+    <h2>
+      Let's discuss your and business  product problem.
+    </h2>
+
+    <p>
+      Interested in product leadership roles involving AI,
+      SaaS, fin-tech, product analytics, architectrue, or complex platform
+      transformation.
+    </p>
+
+    <div class="buttons" style="justify-content:center;">
+
+      <a class="button secondary"
+         href="https://www.linkedin.com/in/cigila"
+         target="_blank">
+        LinkedIn
+      </a>
+
+    </div>
+
+
+	
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 Product Leader Portfolio · AI · SaaS · Fin-Tech
+    </p>
+
+  </footer>
+
+</body>
+</html>
